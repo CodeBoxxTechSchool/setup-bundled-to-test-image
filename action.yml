@@ -100,7 +100,6 @@ runs:
       with:
         secrets: |
           GIT_PAT=${{ inputs.git_patoken }}
-          YARN_TOKEN=${{ inputs.yarn_token }}
         file: ${{ inputs.bundle_dockerfile_name }}
         platforms: ${{ inputs.platforms }}
         build-args: |
@@ -113,6 +112,7 @@ runs:
       with:
         secrets: |
           GIT_PAT=${{ inputs.git_patoken }}
+          YARN_TOKEN=${{ inputs.yarn_token }}
         file: ${{ inputs.test_dockerfile_name }}
         platforms: ${{ inputs.platforms }}
         build-args: |
