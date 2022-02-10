@@ -46,14 +46,9 @@ inputs:
   bundle_from:
     description: 'bundle from this image'
     required: true
-  node_version:
-    description: 'Node version'
+  yarn_token:
+    description: 'Yarn token'
     required: false
-    default: "12.22"
-
-#    push_directory: cg/customer/test
-#    branch: ${{ steps.extract_branch.outputs.branch }}
-#    version: latest
 
 runs:
   using: "composite"
@@ -105,6 +100,7 @@ runs:
       with:
         secrets: |
           GIT_PAT=${{ inputs.git_patoken }}
+          YARN_TOKEN=${{ inputs.yarn_token }}
         file: ${{ inputs.bundle_dockerfile_name }}
         platforms: ${{ inputs.platforms }}
         build-args: |
